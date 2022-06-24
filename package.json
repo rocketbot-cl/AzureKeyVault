@@ -1,0 +1,388 @@
+{
+    "author": "Daniela Zuñiga",
+    "description": "Este modulo te permite conectarte a un almacen de claves de Azure Key Vault. Puedes crear, obtener, actualizar, guardar, eliminar y listar tus secretos. | This module allows you to connect to an Azure Key Vault key store. You can create, obtain, update, save, delete and list your secrets.",
+    "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "homepage": "http://rocketbot.co/",
+    "type": "module",
+    "name": "AzureKeyVault",
+    "linux": true,
+    "windows": true,
+    "mac": true,
+    "docker": true,
+    "dependencies": {
+        "azure-keyvault-secrets": "4.4.0",
+        "azure-identity": "1.10.0"
+    },
+    "title": {
+        "en": "Azure Key Vault",
+        "es": "Azure Key Vault",
+        "pr": "Azure Key Vault"
+    },
+    "icon": "data:image/jpeg;base64,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",
+    "children": [
+        {
+            "title": {
+                "es": "Conectarse al baúl de llaves",
+                "en": "Connect key vault",
+                "pr": "Conectar cofre de chaves"
+            },
+            "description": {
+                "es": "Con este comando puedes conectarte al baul de llaves de Azure.",
+                "en": "With this command you can connect to the Azure key vault",
+                "pr": "Com este comando, você pode se conectar ao chaveiro Azure."
+            },
+            "module": "connect",
+            "module_name": "AzureKeyVault",
+            "father": "module",
+            "group": "scripts",
+            "form": {
+                "css": "modal-lg",
+                "style": "",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "https://rocketbot.vault.azure.net/",
+                        "description": {
+                            "es": "Url del baul de llaves obtenida en el servicio de Azure key vault",
+                            "en": "Key vault url obtained from Azure key vault service",
+                            "pr": "Url do cofre de chaves obtido do serviço de Azure Key vault"
+
+                        },
+                        "title": {
+                            "en": "url of your key vault",
+                            "es": "url de tu baul de llaves:",
+                            "pr": "url de seu cofre de senhas"
+                        },
+                        "id": "url",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "468fab45-2d6c-4164-a97d-52b88c1ee45c",
+                        "description": {
+                            "es": "ID del directorio que puedes obtener de la pagina principal de tu aplicación",
+                            "en": "Directory ID that you can get from the home page of your application.",
+                            "pr": "ID do diretório que você pode obter na página inicial de sua aplicação."
+                        },
+                        "title": {
+                            "en": "Tenant ID",
+                            "es": "ID. de directorio (Inquilino)",
+                            "pr": "Tenant ID"
+                        },
+                        "id": "tenant-id",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "e827a5a7-ec88-45b2-89c9-0641289ef14b",
+                        "description": {
+                            "es": "Id de aplicación (cliente) obtenido en la página principal de la aplicación creada en azure",
+                            "en": "Application ID (client) obtained from the home page of the application created in azure",
+                            "pr": "Id da aplicação (cliente) obtida da página inicial da aplicação criada em azure."
+                        },
+                        "title": {
+                            "en": "Client ID",
+                            "es": "Id. de aplicación (Cliente)",
+                            "pr": "Client ID"
+                        },
+                        "id": "client-id",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "_d18Q~ceU4Pbcxy4TAbnMm1p6ArcidqegYSAFaYJ",
+                        "description": {
+                            "es": "Valor del secreto obtenido en el menú, certificados y secretos de la aplicación",
+                            "en": "Value of the secret obtained in the menu, certificates and application secrets",
+                            "pr": "Valor do segredo obtido na seção, certificados e segredos do pedido.."
+                        },
+                        "title": {
+                            "en": "Secret client value",
+                            "es": "Valor de ID de secreto",
+                            "pr": "Valor ID secreto"
+                        },
+                        "id": "client-secret",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "variable",
+                        "title": {
+                            "en": "Name of the variable where to assign the result ",
+                            "es": "Nombre de la variable donde asignar el resultado",
+                            "pr": "Nome da variável onde atribuir o resultado"
+                        },
+                        "remove_vars": true,
+                        "id": "variable",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon":"data:image/jpeg;base64,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",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": false,
+            "visible": true,
+            "options": false
+        },
+        {
+            "title": {
+                "en": "Get secret",
+                "es": "Obtener secreto",
+                "pr": "Obter segredo"
+            },
+            "description": {
+                "es": "Con este comando puedes obtener un secreto de Azure Key Vault",
+                "en": "With this command you can get a secret from Azure Key Vault",
+                "pr": "Com este comando você pode obter um segredo do Cofre de Chaves Azure"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "Secret1",
+                        "description":{
+                            "en": "Name of the secret you want to obtain",
+                            "es": "Nombre del secreto que quieres obtener",
+                            "pr": "Nome do segredo que você deseja obter"
+                        },
+                        "title": {
+                            "en": "Write the name of your secret",
+                            "es": "Escribe el nombre de tu secreto:",
+                            "pr": "Nome de seu segredo"
+                        },
+                        "id": "secret-name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "variable",
+                        "title": {
+                            "en": "Name of the variable where to assign the result ",
+                            "es": "Nombre de la variable donde asignar el resultado",
+                            "pr": "Nome da variável onde atribuir o resultado"
+                        },
+                        "remove_vars": true,
+                        "id": "variable",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAAwICAgICAwICAgMDAwMEBgQEBAQECAYGBQYJCAoKCQgJCQoMDwwKCw4LCQkNEQ0ODxAQERAKDBITEhATDxAQEP/bAEMBAwMDBAMECAQECBALCQsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEP/AABEIACAAIAMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAGCAkFB//EADIQAAEDAgMGBAMJAAAAAAAAAAECAwQFEQAGBwgSITFBYRQVIlETUnEXIyZDVVhyldH/xAAWAQEBAQAAAAAAAAAAAAAAAAAFBgT/xAAoEQABAgUDBAEFAAAAAAAAAAABAhEDBAUhQQAGMRIiUYEUE0JhcfD/2gAMAwEAAhEDEQA/AKe4Gc8ak5J05gePzfX40EKBLTJO8+9/BtN1K+trDqRjL1o1LiaV5CnZlWUKnKHhqcyr82SoHd4dQmxUeyT7jCMaaUaVqlqWzKzlVH5UKMHKvXZspwrKYbA33StR4gGwR23hinom3xUIK52ZUUwkeOS1yB/G9tQm6d4Ko81CpkigLmIjM57UuWBU3OSzhgHJ1QHKmdqPm1hrwqlRpy4TFRXT31DxDEd8r+CpxIJCSoIJtc25HBBiaGWdpOsUfaHlavv/ABfLqpKVGmQx+mEhCGwORU2hLah7qR3OKT0+oQqrAjVSmyW5MSYyh9h5s3S42oBSVA9QQQcYaxSV0xaSR2qD/o5HrS229wwq7DWAe5BY/kYU2HyMH1pEtpvP1Z1Lz65DpkKYuhUEriQt1le68u/3r3LjvEAA/KlJ6nHXNlzRanydK67NzfTnPxo25BU0q7biYKbp4HmkqWVH6JQcMwsKUhSUq3SQQFDp3xx/7INY/wBzFd/ooX+YWibgTM05NOggQUpa7qJLXwnzc6nYOzlyNZVWZkqmVr6rAJSEvb7l3AS6QPGkC1s0grui+d5OVqrvPRF3fps3dsmVHJ9KuyhyUnoR7EEtRsKaz+c0V/SGvy7zKShUmkKWri5FJ9bPHmUKNwPlURyRguz3sp5o1NhRqfnrXSqVZiG6Xo4dokVCm1EWNlIsoAjmL2NhfkMYmTNhqLkTNNMzfl/VWpMz6VITIZPlyLKtzQr18UqSSkjqCRjZOVaRqNP+PNRB9QcEBTOODwOc+9G07btWo1Y+ZIQSIJLFJUh+k8iyi7ci+A+v/9k=",
+            "module": "get-secret",
+            "module_name": "AzureKeyVault",
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": false,
+            "visible": true,
+            "options": false
+        },
+        {
+            "title": {
+                "en": "Create or update secret",
+                "es": "Crear o modificar secreto",
+                "pr": "Criar ou modificar o segredo"
+            },
+            "description": {
+                "es": "Con este comando puedes crear o modificar un secreto en Azure Key Vault",
+                "en": "With this command you can create or modify a secret in Azure Key Vault",
+                "pr": "Com este comando, você pode criar ou modificar um segredo no Cofre de Chaves Azure."
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "Secret1",
+                        "title": {
+                            "en": "Write the name of your secret",
+                            "es": "Escribe el nombre de tu secreto:",
+                            "pr": "Nome de seu segredo"
+                        },
+                        "help": {
+                            "es": "Si el nombre existe lo va a actualizar, si no existe, lo va a crear.",
+                            "en": "If the name exists, it will update it, if it does not exist, it will create it.",
+                            "pr": "Se o nome existir, ele o atualizará, se não existir, ele o criará."
+                        },
+                        "id": "secret-name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "12345",
+                        "title": {
+                            "en": "Secret value",
+                            "es": "Valor del secreto",
+                            "pr": "Valor do segredo"
+                        },
+                        "id": "secret-value",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/jpeg;base64,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",
+            "module": "set-secret",
+            "module_name": "AzureKeyVault",
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": false,
+            "visible": true,
+            "options": false
+        },
+        {
+            "title": {
+                "en": "Update property of secret",
+                "es": "Actualizar la propiedad del secreto",
+                "pr": "Atualizar propiedade do segredo"
+            },
+            "description": {
+                "es": "Con este comando puedes actualizar la propiedad del secreto (como tipo, habilitado/deshabilitado)",
+                "en": "With this command you can update the property of the secret (content type, enabled/disabled)",
+                "pr": "Com este comando você pode atualizar a propriedade secreta (como o tipo, habilitado/desabilitado)."
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "Secret1",
+                        "description":{
+                            "en": "Name of the secret whose properties you want to update",
+                            "es": "Nombre del secreto del cual quieres actualizar sus propiedades",
+                            "pr": "Nome do segredo para o qual você deseja atualizar suas propriedades"
+                        },
+                        "title": {
+                            "en": "Write the name of your secret:",
+                            "es": "Escribe el nombre de tu secreto:",
+                            "pr": "Nome de seu segredo:"
+                        },
+                        "id": "secret-name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Habilitar/Deshabilitar",
+                          "en": "Enable/Disable",
+                          "pr": "Habilitar/Desabilitar"
+                        },
+                        "options": [
+                          {
+                            "title": "Enable",
+                            "value": "True"
+                          },
+                          {
+                            "title": "Disable",
+                            "value": "False"
+                          }
+                          
+                        ],
+                        
+                        "id": "enable",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Text/plain",
+                            "en": "Text/plain",
+                            "pr": "Text/plain"
+                        },
+                        "description": {
+                            "es": "Tipo de contenido que quiere que tenga su secreto (ejemplo: text/plain)",
+                            "en": "Type of content you want your secret to have (example: text/plain)",
+                            "pr": "Tipo de conteúdo que você quer que seu segredo tenha (por exemplo, text/plain)"
+                        },
+                        "title": {
+                            "es": "Tipo de contenido del secreto (Opcional)",
+                            "en": "Type of secret content (Optional) ",
+                            "pr": "Tipo de conteúdo do segredo (Opcional)"
+                        },
+                          
+                        "remove_vars": true,
+                        "id": "content-type",
+                        "css": "col-md-12"
+                      }
+
+                    
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/jpeg;base64,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",
+            "module": "update-property-secret",
+            "module_name": "AzureKeyVault",
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": false,
+            "visible": true,
+            "options": false
+        },
+        {
+            "title": {
+                "en": "Delete secret",
+                "es": "Eliminar secreto",
+                "pr": "Retirar o segredo"
+            },
+            "description": {
+                "es": "Con este comando puedes eliminar un secreto.",
+                "en": "With this command you can delete a secret.",
+                "pr": "Com este comando você pode apagar um segredo."
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "Secret1",
+                        "description":{
+                            "en": "Name of the secret whose properties you want to update",
+                            "es": "Nombre del secreto del cual quieres actualizar sus propiedades",
+                            "pr": "Nome do segredo para o qual você deseja atualizar suas propriedades"
+                        },
+                        "title": {
+                            "en": "Type the name of the secret you want to delete:",
+                            "es": "Escribe el nombre del secreto que deseas eliminar:",
+                            "pr": "Digite o nome do segredo que você deseja apagar:"
+                        },
+                    
+                        "id": "secret-name",
+                        "css": "col-md-12"
+                    }
+                    
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/jpeg;base64,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",
+            "module": "delete-secret",
+            "module_name": "AzureKeyVault",
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": false,
+            "visible": true,
+            "options": false
+        }
+    ]
+}
