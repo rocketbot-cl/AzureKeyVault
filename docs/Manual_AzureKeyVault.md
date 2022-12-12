@@ -1,3 +1,3 @@
 ## AzureKeyVault
 
- view the documentation at: https://github.com/rocketbot-cl/SAPB1/blob/master/example/Manual_AzureKeyVault.pdf
+ view the documentation at: https://github.com/rocketbot-cl/AzureKeyVault/blob/master/example/Manual_AzureKeyVault.pdf
