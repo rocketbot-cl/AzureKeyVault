@@ -31,7 +31,7 @@ Com este comando você pode obter um segredo do Cofre de Chaves Azure
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Nome de seu segredo|Nome do segredo que você deseja obter|Secret1|
-|Nome da variável onde atribuir o resultado||variable|
+|Nome da variável onde atribuir o resultado|Variável onde o segredo será salvo|variable|
 
 ### Criar ou modificar o segredo
   

@@ -31,7 +31,7 @@ Con este comando puedes obtener un secreto de Azure Key Vault
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Escribe el nombre de tu secreto|Nombre del secreto que quieres obtener|Secret1|
-|Nombre de la variable donde asignar el resultado||variable|
+|Nombre de la variable donde asignar el resultado|Variable donde se guardará el secreto|variable|
 
 ### Crear o modificar secreto
   
