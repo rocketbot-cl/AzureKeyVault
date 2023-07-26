@@ -1,10 +1,15 @@
 {
     "author": "Daniela Zuñiga",
-    "description": "Este modulo te permite conectarte a un almacen de claves de Azure Key Vault. Puedes crear, obtener, actualizar, guardar, eliminar y listar tus secretos. | This module allows you to connect to an Azure Key Vault key store. You can create, obtain, update, save, delete and list your secrets.",
+    "description": "This module allows you to safeguard, create or retrieve cryptographic keys and other secrets used by cloud apps and services.",
+    "description_lang": {
+        "es": "Este modulo permite que usted proteja, cree o recupere claves criptográficas y otros secretos usados por aplicaciones y servicios en la nube.",
+        "en": "This module allows you to safeguard, create or retrieve cryptographic keys and other secrets used by cloud apps and services.",
+        "pr": "Este modulo permite que você proteja, crie ou recupere chaves criptográficas e outros segredos usados por aplicativos e serviços em nuvem."
+    },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "license": "MIT",
-    "homepage": "http://rocketbot.co/",
+    "homepage": "http://rocketbot.com/",
     "type": "module",
     "name": "AzureKeyVault",
     "linux": true,
@@ -114,6 +119,16 @@
                             "es": "Nombre de la variable donde asignar el resultado",
                             "pr": "Nome da variável onde atribuir o resultado"
                         },
+                        "description": {
+                            "en": "Variable where the result of the connection will be saved",
+                            "es": "Variable donde se guardará el resultado de la conexión",
+                            "pr": "Variável onde o resultado da conexão será salvo"
+                        },
+                        "help": {
+                            "en": "Variable name without {}",
+                            "es": "Nombre de la variable sin {}",
+                            "pr": "Nome da variável sem {}"
+                        },
                         "remove_vars": true,
                         "id": "variable",
                         "css": "col-md-6"
@@ -168,6 +183,11 @@
                             "es": "Nombre de la variable donde asignar el resultado",
                             "pr": "Nome da variável onde atribuir o resultado"
                         },
+                        "description": {
+                            "en": "Variable where the secret will be saved",
+                            "es": "Variable donde se guardará el secreto",
+                            "pr": "Variável onde o segredo será salvo"
+                        },
                         "remove_vars": true,
                         "id": "variable",
                         "css": "col-md-6"
@@ -210,6 +230,11 @@
                             "es": "Escribe el nombre de tu secreto:",
                             "pr": "Nome de seu segredo"
                         },
+                        "description": {
+                            "en": "If the name exists, it will update it, if it does not exist, it will create it.",
+                            "es": "Si el nombre existe lo va a actualizar, si no existe, lo va a crear.",
+                            "pr": "Se o nome existir, ele o atualizará, se não existir, ele o criará."
+                        },
                         "help": {
                             "es": "Si el nombre existe lo va a actualizar, si no existe, lo va a crear.",
                             "en": "If the name exists, it will update it, if it does not exist, it will create it.",
@@ -225,6 +250,11 @@
                             "en": "Secret value",
                             "es": "Valor del secreto",
                             "pr": "Valor do segredo"
+                        },
+                        "description": {
+                            "en": "The value of the secret",
+                            "es": "El valor del secreto",
+                            "pr": "O valor do segredo"
                         },
                         "id": "secret-value",
                         "css": "col-md-6"
@@ -293,7 +323,11 @@
                           }
                           
                         ],
-                        
+                        "description": {
+                            "es": "Habilitar o deshabilitar el secreto",
+                            "en": "Enable or disable the secret",
+                            "pr": "Habilitar ou desabilitar o segredo"
+                        },
                         "id": "enable",
                         "css": "col-md-6"
                       },
@@ -314,13 +348,10 @@
                             "en": "Type of secret content (Optional) ",
                             "pr": "Tipo de conteúdo do segredo (Opcional)"
                         },
-                          
                         "remove_vars": true,
                         "id": "content-type",
                         "css": "col-md-12"
                       }
-
-                    
                 ]
             },
             "video_youtube": "",
