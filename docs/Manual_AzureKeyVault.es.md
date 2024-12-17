@@ -1,3 +1,7 @@
+
+
+
+
 # Azure Key Vault
   
 Este modulo permite que usted proteja, cree o recupere claves criptográficas y otros secretos usados por aplicaciones y servicios en la nube.  
@@ -10,6 +14,54 @@ Este modulo permite que usted proteja, cree o recupere claves criptográficas y 
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
 2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+
+
+
+## Como usar este módulo
+
+Antes de usar este módulo, es necesario registrarse en el portal de Azure https://portal.azure.com y crear tu “Key Vault”:
+
+1. **Accede al portal de Azure**
+
+2. **Crea un nuevo Key Vault:**
+  En la barra de búsqueda, escribe "Key Vault" y selecciona "Azure Key Vault", haz clic en Crear.
+
+  ![paso](imgs/portalazure.jpg)
+
+3. **Configura los detalles del Key Vault:**
+
+    - Suscripción: Selecciona la suscripción en la que deseas crear el Key Vault.
+    - Grupo de recursos:
+      Elige un grupo de recursos existente o crea uno nuevo.
+    - Nombre del Key Vault:
+      Escribe un nombre único para el Key Vault (debe ser globalmente único).
+    - Región:
+      Selecciona la región donde se almacenará el Key Vault.
+    - Opciones de red:
+      Elige si deseas que el acceso sea público o restringido a redes privadas.
+
+4. **Revisa y crea**
+
+# Pasos para ingresar a Azure y conectarse al baúl de llaves:
+
+1. **Crear una Aplicación de Azure AD (Service Principal) | registro de aplicaciones**
+    - Obtener client_id, tenant_id y client_secret
+    - Client ID (ID de la aplicación): Se encuentra en la sección de resumen de tu aplicación.
+    - Tenant ID (ID del directorio): También está en el resumen de tu aplicación.
+    - Client Secret (secreto del cliente):
+      - Ve a "Certificados y secretos" en el registro de la aplicación.
+      - Crea un nuevo secreto de cliente  y asegúrate de copiar y guarda el valor, ya que no podrás verlo nuevamente.
+
+2. **Asignar Acceso a la Aplicación en el Key Vault**
+    - Ve a tu Key Vault en el portal.
+    - Selecciona "Políticas de acceso" en el menú lateral.
+    - Haz clic en "Agregar política de acceso".
+    - Asigna permisos según las necesidades, por ejemplo:
+      - Permisos de secreto: Obtener, enumerar, establecer.
+      - Permisos de clave: Obtener, enumerar, crear, importar.
+      - Permisos de certificado: Obtener, enumerar, administrar
+    - Selecciona la aplicación registrada (Service Principal) bajo Principal.
+    - Guarda los cambios.
 
 
 ## Descripción de los comandos
