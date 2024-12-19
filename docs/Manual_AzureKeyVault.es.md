@@ -26,7 +26,6 @@ Antes de usar este módulo, es necesario registrarse en el portal de Azure https
 2. **Crea un nuevo Key Vault:**
   En la barra de búsqueda, escribe "Key Vault" y selecciona "Azure Key Vault", haz clic en Crear.
 
-  ![paso](imgs/portalazure.jpg)
 
 3. **Configura los detalles del Key Vault:**
 
