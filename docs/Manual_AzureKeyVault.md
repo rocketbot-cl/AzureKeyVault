@@ -1,3 +1,7 @@
+
+
+
+
 # Azure Key Vault
   
 This module allows you to safeguard, create or retrieve cryptographic keys and other secrets used by cloud apps and services.  
@@ -10,6 +14,48 @@ This module allows you to safeguard, create or retrieve cryptographic keys and o
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
 2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+
+## How to use this module
+Before using this module, you need to sign up to the Azure portal https://portal.azure.com and create your “Key Vault”:
+
+1. **Access the Azure portal**
+
+2. **Create a new Key Vault:**
+    In the search bar, type “Key Vault” and select “Azure Key Vault”, click Create.
+
+3. **Configure the Key Vault details:**
+    - Subscription: Select the subscription in which you want to create the Key Vault.
+    - Resource Group:
+        Choose an existing resource group or create a new one.
+    - Key Vault Name:
+        Enter a unique name for the Key Vault (must be globally unique).
+    - Region:
+        Select the region where the Key Vault will be stored.
+    - Network Options:
+        Choose whether you want access to be public or restricted to private networks.
+
+4. **Review and create**
+
+# Steps to log in to Azure and connect to the Key Vault:
+
+1. **Create an Azure AD Application (Service Principal) | Application Registration**
+    - Get client_id, tenant_id, and client_secret
+    - Client ID: Found in the summary section of your application.
+    - Tenant ID: Also found in your application summary.
+    - Client Secret:
+        - Go to “Certificates & Secrets” in the application registration.
+        - Create a new client secret and make sure to copy and save the value as you won’t be able to see it again.
+
+2. **Assign Application Access in Key Vault**
+    - Go to your Key Vault in the portal.
+    - Select “Access Policies” from the side menu.
+    - Click “Add Access Policy.”
+    - Assign permissions as needed, for example:
+        - Secret Permissions: Get, List, Set.
+        - Key Permissions: Get, List, Create, Import.
+        - Certificate Permissions: Get, List, Manage
+    - Select the registered application (Service Principal) under Principal.
+    - Save changes.
 
 
 ## Description of the commands
